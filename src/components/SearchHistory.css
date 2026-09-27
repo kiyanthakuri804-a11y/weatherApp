@@ -1,0 +1,102 @@
+/* =================== SEARCH HISTORY SECTION =================== */
+.search-history-section {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.history-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.clear-all-btn {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(108, 143, 255, 0.3);
+  transition: all var(--transition-fast);
+  background: rgba(108, 143, 255, 0.08);
+}
+
+.clear-all-btn:hover {
+  background: rgba(108, 143, 255, 0.2);
+  border-color: var(--color-accent);
+}
+
+/* =================== HISTORY CHIPS =================== */
+.history-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.history-chip {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.history-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(108, 143, 255, 0.5);
+}
+
+.chip-city-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 14px;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.chip-city-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.chip-icon {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.chip-remove-btn {
+  padding: 8px 10px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  border-left: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  opacity: 0;
+}
+
+.history-chip:hover .chip-remove-btn {
+  opacity: 1;
+}
+
+.chip-remove-btn:hover {
+  color: var(--color-error);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+@media (max-width: 480px) {
+  .history-chips {
+    gap: 6px;
+  }
+  .chip-city-btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}

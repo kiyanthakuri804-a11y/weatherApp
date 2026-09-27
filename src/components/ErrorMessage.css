@@ -1,0 +1,73 @@
+/* =================== ERROR CONTAINER =================== */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-xl);
+  gap: var(--space-md);
+  text-align: center;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* =================== ICON =================== */
+.error-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+}
+
+.error-icon {
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.error-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 113, 113, 0.5);
+  animation: ripple 1.5s ease-out infinite;
+}
+
+/* =================== TEXT =================== */
+.error-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.error-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* =================== RETRY BUTTON =================== */
+.retry-btn {
+  margin-top: var(--space-sm);
+  padding: 12px var(--space-xl);
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 16px rgba(248, 113, 113, 0.35);
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.45);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+}

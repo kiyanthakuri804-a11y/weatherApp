@@ -1,0 +1,138 @@
+/* =================== FORECAST SECTION =================== */
+.forecast-section {
+  animation: fadeInUp 0.5s 0.1s ease both;
+}
+
+/* =================== FORECAST GRID =================== */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-sm);
+}
+
+/* =================== FORECAST DAY CARD =================== */
+.forecast-day-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.4s ease both;
+  cursor: default;
+}
+
+.forecast-day-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(108, 143, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(108, 143, 255, 0.2);
+}
+
+/* =================== FORECAST DATE =================== */
+.forecast-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+/* =================== FORECAST ICON =================== */
+.forecast-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15));
+  transition: transform var(--transition-base);
+}
+
+.forecast-day-card:hover .forecast-icon {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+/* =================== DESCRIPTION =================== */
+.forecast-description {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+  text-transform: capitalize;
+  line-height: 1.3;
+  min-height: 2em;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* =================== TEMPERATURES =================== */
+.forecast-temps {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.forecast-high {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.forecast-divider {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.forecast-low {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(120, 180, 255, 0.8);
+}
+
+/* =================== EXTRA INFO =================== */
+.forecast-extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: var(--space-xs);
+}
+
+.forecast-humidity,
+.forecast-wind {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 320px) {
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+}

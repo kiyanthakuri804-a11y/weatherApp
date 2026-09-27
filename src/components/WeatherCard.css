@@ -1,0 +1,280 @@
+/* =================== WEATHER GRADIENTS =================== */
+.gradient-clear-day {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2a6496 40%, #1a8fa8 100%);
+}
+.gradient-clear-night {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2a6c 50%, #2c1654 100%);
+}
+.gradient-clouds-day {
+  background: linear-gradient(135deg, #2c3e50 0%, #3d5a75 50%, #4a6b8a 100%);
+}
+.gradient-clouds-night {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+.gradient-rain {
+  background: linear-gradient(135deg, #1a2a45 0%, #1f3c6e 50%, #2d4d8c 100%);
+}
+.gradient-thunder {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #4a0e8f 100%);
+}
+.gradient-snow {
+  background: linear-gradient(135deg, #1e2d3d 0%, #2e5077 50%, #4a7fa8 100%);
+}
+.gradient-fog {
+  background: linear-gradient(135deg, #2c3e50 0%, #3d5a75 50%, #546e7a 100%);
+}
+.gradient-default {
+  background: linear-gradient(135deg, #1a1f3c 0%, #1e3a5f 100%);
+}
+
+/* =================== WEATHER CARD =================== */
+.weather-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Glassmorphism overlay */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Star-like sparkles using pseudo-elements */
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* =================== CARD HEADER =================== */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.city-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.country-flag {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.date-time-info {
+  text-align: right;
+}
+
+.current-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+.current-time {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
+}
+
+/* =================== CARD MAIN =================== */
+.card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.weather-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-icon-large {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(255, 255, 255, 0.2));
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.condition-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+  margin-top: var(--space-xs);
+}
+
+.temperature-display {
+  text-align: right;
+}
+
+.temp-main {
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  letter-spacing: -0.03em;
+}
+
+.temp-range {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+}
+
+.temp-high {
+  color: rgba(255, 200, 120, 0.9);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.temp-low {
+  color: rgba(120, 180, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.feels-like {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* =================== CARD STATS =================== */
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(8px);
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 640px) {
+  .weather-card {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .card-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .city-name {
+    font-size: 1.5rem;
+  }
+
+  .weather-icon-large {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .date-time-info {
+    text-align: left;
+  }
+
+  .card-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .temperature-display {
+    text-align: left;
+  }
+
+  .temp-range {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
